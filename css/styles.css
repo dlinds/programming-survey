@@ -19,8 +19,29 @@ body {
   padding-top: 5px;
 }
 
+#language-preview-header {
+  text-align: center;
+}
+
+#show-language {
+  text-align: right;
+}
+
+#hide-language {
+  text-align: left;
+}
+
+#rules-language-options {
+  margin-top: 20px;
+  display: none;
+}
+
 #answers {
   padding: 25px;
+}
+
+ol {
+  margin-bottom: 30px;
 }
 
 .card-sections, .row-sections {

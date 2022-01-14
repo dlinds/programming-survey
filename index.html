@@ -33,6 +33,37 @@
             Not happy with your results? Choose <em><strong>Spin Again</strong></em> to change your answers and try again!
           </li>
         </ol>
+        <div class="card-title" id="language-preview-header">
+          <h5 class="display-5">Curious to see which languages you could be paired with?</h5>
+        </div>
+        <div class="row">
+          <div class="col-6" id="show-language">
+            <button class="btn btn-light" id="show-lang-button">Show me!</button>
+          </div>
+          <div class="col-6" id="hide-language">
+            <button class="btn btn-light" id="hide-lang-button">No thanks!</button>
+          </div>
+        </div>
+        <div class="row" id="rules-language-options">
+          <div class="col-2">
+            PowerShell
+          </div>
+          <div class="col-2">
+            C++
+          </div>
+          <div class="col-2">
+            Python
+          </div>
+          <div class="col-2">
+            Fortran
+          </div>
+          <div class="col-2">
+            C#
+          </div>
+          <div class="col-2">
+            Javascript
+          </div>
+        </div>
       </div>
     </div> <!-- end Rules card -->
     <div class="card card-sections" id="form-questions">
@@ -122,11 +153,10 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="cutest-puppy">Which is the cutest puppy name?</label>
-              <select class="form-control" id="cutest-puppy">
+              <label for="cutest-puppy-name">Which is the cutest puppy name?</label>
+              <select class="form-control" id="cutest-puppy-name">
                 <option disabled selected value> -- Select an Answer -- </option>
                 <option>Spot</option>
-                <option>Mocha</option>
                 <option>Doggy Dogerton</option>
               </select>
             </div>
@@ -143,10 +173,10 @@
       <div class="card-title"><h3>Test</h3></div>
       <div class="row" >
         <div class="col-4">
-          Language placeholder
+          <p id="language-suggestion-name">Language placeholder</p>
         </div>
         <div class="col-8">
-          You would be a great match for language because of these reasons
+          <p id="language-suggestion-reason">You would be a great match for language because of these reasons</p>
         </div>
       </div>
       <div class="row" id="spin-again-row">
