@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron" id="welcome-jumbotron">
       <div class="jumbotron-header" id="welcome-message">
         <h2>Welcome to the programming language selector!</h2>
       </div>
@@ -27,13 +27,16 @@
             Once complete, hit the <em><strong>Spin</strong></em> button below.
           </li>
           <li class="rule-of-game">
+            Once you spin, a programming language will be recommended based on your answers.
+          </li>
+          <li class="rule-of-game">
             Not happy with your results? Choose <em><strong>Spin Again</strong></em> to change your answers and try again!
           </li>
         </ol>
       </div>
     </div> <!-- end Rules card -->
     <div class="card card-sections" id="form-questions">
-      <form id="answers">
+      <form id="answers" autocomplete="off">
         <div class="card-title">
           <h2>The basics</h2>
         </div>
@@ -41,13 +44,13 @@
           <div class="col-4">
             <div class="form-group">
               <label for="user-name">What is your name?</label>
-              <input class="form-control" id="user-name">
+              <input class="form-control" id="user-name" autocomplete="name">
             </div>
           </div>
           <div class="col-8">
             <div class="form-group">
               <label for="user-name">What is your email?</label>
-              <input class="form-control" id="email" type="email" value="myemail@gmail.com">
+              <input class="form-control" id="email" type="email" value="myemail@gmail.com" autocomplete="email">
               <small class="form-text text-muted">We'll share your email with anyone who will buy it, nothing is free!</small>
             </div>
           </div>
@@ -71,8 +74,8 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="user-name">What industry do you work in?</label>
-              <select class="form-control" id="leisure-activity">
+              <label for="user-industry">What industry do you work in?</label>
+              <select class="form-control" id="user-industry">
                 <option disabled selected value> -- Select an Industry -- </option>
                 <option>Finance</option>
                 <option>Tech</option>
@@ -83,8 +86,8 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="user-name">Which do you think came first?</label>
-              <select class="form-control" id="leisure-activity">
+              <label for="chicken-or-egg">Which do you think came first?</label>
+              <select class="form-control" id="chicken-or-egg">
                 <option disabled selected value> -- Select an Answer -- </option>
                 <option>Chicken</option>
                 <option>Egg</option>
@@ -98,9 +101,9 @@
         <div class="row row-sections">
           <div class="col-4">
             <div class="form-group">
-              <label for="leisure-activity">How do you like your formatting?</label>
-              <select class="form-control" id="leisure-activity">
-                <option disabled selected value> -- Select an Activity -- </option>
+              <label for="language-formatting">How do you like your formatting?</label>
+              <select class="form-control" id="language-formatting">
+                <option disabled selected value> -- Select a Preference -- </option>
                 <option>Precise</option>
                 <option>Wild West</option>
               </select>
@@ -108,9 +111,9 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="user-name">How old do you like your languages?</label>
-              <select class="form-control" id="leisure-activity">
-                <option disabled selected value> -- Select an Industry -- </option>
+              <label for="language-age">How old do you like your languages?</label>
+              <select class="form-control" id="language-age">
+                <option disabled selected value> -- Select an Age -- </option>
                 <option>Elderly</option>
                 <option>Middle Aged</option>
                 <option>Brand New</option>
@@ -119,8 +122,8 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="user-name">Which is the cutest puppy name?</label>
-              <select class="form-control" id="leisure-activity">
+              <label for="cutest-puppy">Which is the cutest puppy name?</label>
+              <select class="form-control" id="cutest-puppy">
                 <option disabled selected value> -- Select an Answer -- </option>
                 <option>Spot</option>
                 <option>Mocha</option>
@@ -136,7 +139,7 @@
         </div>
       </form>
     </div> <!-- end form div -->
-    <div class="card" id="form-results">
+    <div class="card card-sections" id="form-results">
       <div class="card-title"><h3>Test</h3></div>
       <div class="row" >
         <div class="col-4">

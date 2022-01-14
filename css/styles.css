@@ -1,6 +1,11 @@
 body {
   background-color: #0b00ff03;
 }
+#welcome-jumbotron {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+  border: 1px solid #dcdcdc;
+  margin-top: 30px;
+}
 #welcome-message {
   text-align: center;
 }
@@ -19,7 +24,10 @@ body {
 }
 
 .card-sections, .row-sections {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+.card-sections {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
 }
 
 #spin-column {
@@ -34,7 +42,6 @@ body {
 #form-results {
   display: none;
 }
-
 
 #spin-again-row {
   margin-top: 25px;
