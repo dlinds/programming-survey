@@ -5,11 +5,51 @@
   <link href='css/styles.css' rel='stylesheet' type='text/css'>
   <script src='js/jquery-3.6.0.js'></script>
   <script src='js/scripts.js'></script>
-  <title>Title</title>
+  <title>Programming Selector</title>
 </head>
 <body>
   <div class="container">
-  
+    <div class="jumbotron">
+      <div class="jumbotron-header" id="welcome-message">
+        <h2>Welcome to the programming language selector!</h2>
+      </div>
+    </div>
+    <div class="card card-sections">
+      <div class="card-title" id="rules-title">
+        <h4>Want to play? Here are the rules</h4>
+      </div>
+      <div class="card-body">
+        <ol>
+          <li class="rule-of-game">
+            First, fill out the form below with your answers.
+          </li>
+          <li class="rule-of-game">
+            Once complete, hit the <em><strong>Spin</strong></em> button below.
+          </li>
+          <li class="rule-of-game">
+            Not happy with your results? Change your answers and <em><strong>Spin</strong></em> as many times as you want!
+          </li>
+        </ol>
+      </div>
+    </div> <!-- end Rules card -->
+    <div class="card card-sections">
+      <form id="answers">
+        <h2>The basics</h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="user-name">What is your name?</label>
+              <input class="form-control" id="user-name">
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="form-group">
+              <label for="user-name">What is your email?</label>
+              <input class="form-control" id="email" type="email" value="myemail@gmail.com">
+            </div>
+          </div>
+      </form>
+    </div>
   </div>
 </body>
 </html>

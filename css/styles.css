@@ -1,0 +1,22 @@
+#welcome-message {
+  text-align: center;
+}
+
+#rules-title {
+  padding-top: 2%;
+  text-align: center;
+}
+
+.rule-of-game {
+  padding-top: 5px;
+}
+
+#answers {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.card-sections {
+  margin-bottom: 20px;
+}
