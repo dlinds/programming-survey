@@ -27,15 +27,17 @@
             Once complete, hit the <em><strong>Spin</strong></em> button below.
           </li>
           <li class="rule-of-game">
-            Not happy with your results? Change your answers and <em><strong>Spin</strong></em> as many times as you want!
+            Not happy with your results? Choose <em><strong>Spin Again</strong></em> to change your answers and try again!
           </li>
         </ol>
       </div>
     </div> <!-- end Rules card -->
-    <div class="card card-sections">
+    <div class="card card-sections" id="form-questions">
       <form id="answers">
-        <h2>The basics</h2>
-        <div class="row">
+        <div class="card-title">
+          <h2>The basics</h2>
+        </div>
+        <div class="row row-sections">
           <div class="col-4">
             <div class="form-group">
               <label for="user-name">What is your name?</label>
@@ -46,9 +48,109 @@
             <div class="form-group">
               <label for="user-name">What is your email?</label>
               <input class="form-control" id="email" type="email" value="myemail@gmail.com">
+              <small class="form-text text-muted">We'll share your email with anyone who will buy it, nothing is free!</small>
             </div>
           </div>
+        </div>
+        <div class="card-title">
+          <h2>Tell us about you</h2>
+        </div>
+        <div class="row row-sections">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="leisure-activity">Which is your favorite leisure activity?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Activity -- </option>
+                <option>Video Games</option>
+                <option>Netflix</option>
+                <option>Exercise</option>
+                <option>Make Music</option>
+                <option>Work</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="user-name">What industry do you work in?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Industry -- </option>
+                <option>Finance</option>
+                <option>Tech</option>
+                <option>Science</option>
+                <option>Media</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="user-name">Which do you think came first?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Answer -- </option>
+                <option>Chicken</option>
+                <option>Egg</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="card-title">
+        <h2>Your programming preferences</h2>
+        </div>
+        <div class="row row-sections">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="leisure-activity">How do you like your formatting?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Activity -- </option>
+                <option>Precise</option>
+                <option>Wild West</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="user-name">How old do you like your languages?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Industry -- </option>
+                <option>Elderly</option>
+                <option>Middle Aged</option>
+                <option>Brand New</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="user-name">Which is the cutest puppy name?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Answer -- </option>
+                <option>Spot</option>
+                <option>Mocha</option>
+                <option>Doggy Dogerton</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" id="spin-column">
+            <button class="btn btn-light" id="spin-button"><h3>SPIN!</h3></button>
+          </div>
+        </div>
       </form>
+    </div> <!-- end form div -->
+    <div class="card" id="form-results">
+      <div class="card-title"><h3>Test</h3></div>
+      <div class="row" >
+        <div class="col-4">
+          Language placeholder
+        </div>
+        <div class="col-8">
+          You would be a great match for language because of these reasons
+        </div>
+      </div>
+      <div class="row" id="spin-again-row">
+        <div class="col-12" id="spin-column">
+          <button class="btn btn-light" id="spin-again-button"><h3>SPIN AGAIN!</h3></button>
+        </div>
+      </div>
     </div>
   </div>
 </body>

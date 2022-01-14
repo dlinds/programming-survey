@@ -1,3 +1,6 @@
+body {
+  background-color: #0b00ff03;
+}
 #welcome-message {
   text-align: center;
 }
@@ -12,11 +15,28 @@
 }
 
 #answers {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
+  padding: 25px;
 }
 
-.card-sections {
+.card-sections, .row-sections {
+  margin-bottom: 20px;
+}
+
+#spin-column {
+  text-align: center;
+}
+
+#spin-button, #spin-again-button {
+  width: 30%;
+  border: 1px solid #dcdcdc;
+}
+
+#form-results {
+  display: none;
+}
+
+
+#spin-again-row {
+  margin-top: 25px;
   margin-bottom: 20px;
 }
