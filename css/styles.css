@@ -1,6 +1,12 @@
 body {
   background-color: #0b00ff03;
 }
+.container {
+  padding: 2%;
+  margin-top: 2%;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+  border: 1px solid #dcdcdc;
+}
 #welcome-jumbotron {
   box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
   border: 1px solid #dcdcdc;
