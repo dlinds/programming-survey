@@ -54,7 +54,7 @@ $(document).ready(function () {
   $("form#answers").submit(function (event) {
     event.preventDefault();
 
-    const userName = $("input#user-name").val();
+    let userName = $("input#user-name").val();
     const emailAddress = $("input#email").val();
     const chickenOrEgg = $("select#chicken-or-egg").val();
     const leisureActivity = $("select#leisure-activity").val();
@@ -92,10 +92,14 @@ $(document).ready(function () {
                     languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
                   } else if (languageFormatting === "Wild West") {
                       languageResult = "Javascript!";
-                      languageReasoning = "We think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
+                      languageReasoning = "we think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
+                  }
+                    else if (languageFormatting === "Precise") {
+                      languageResult = "C++!";
+                      languageReasoning = "we think you'd be a great fit for C++ as you didn't select an age, but you do like your languages to be precise."; 
                     } else {
                       languageResult = "Darn! No matches";
-                      languageReasoning = "We couldn't seem to find a great match for you off just Finance and " + leisureActivity + ". Can you give us a little more information about yourself and re-spin?";
+                      languageReasoning = "we couldn't seem to find a great match for you off just Finance and " + leisureActivity + ". Can you give us a little more information about yourself and re-spin?";
                     }
         } //end finance industry branch
       } else if (userIndustry === "Tech") {
@@ -195,6 +199,11 @@ $(document).ready(function () {
                   $("#language-suggestion-img").attr("src", ""); //set to no photo if no match is found
                   $("#language-suggestion-img").css("display", "none"); //set to no photo if no match is found
                 }
+
+    if (!userName) {
+      userName = "Hey there";
+    }
+
     $("#language-suggestion-reason").text(userName + ", " + languageReasoning);
     $("#language-more-info").text(getInfoOnLanguage(languageResult));
 
