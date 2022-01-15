@@ -31,6 +31,18 @@ body {
 #language-preview-header {
   text-align: center;
 }
+#rules-language-options {
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: none;
+}
+.language-name-previews {
+  padding: 5px;
+  background-color: #f8f9fa;
+  border:1px solid #dcdcdc;
+  text-align: center;
+}
 
 #show-language {
   text-align: right;
@@ -38,11 +50,6 @@ body {
 
 #hide-language {
   text-align: left;
-}
-
-#rules-language-options {
-  margin-top: 20px;
-  display: none;
 }
 
 #answers {
@@ -78,9 +85,8 @@ ol {
 }
 #language-suggestion-img {
   max-width: 200px;
-  display: none;
 }
-#language-suggestion-reason {
+#language-suggestion-reason, #language-more-info {
   text-align: left;
   padding-right: 5%;
 }
@@ -89,10 +95,10 @@ ol {
   margin-top: 25px;
   margin-bottom: 20px;
 }
-#puppy-row {
-  visibility: hidden;
+#puppy-col {
+  text-align: center;
+  padding: 30px;
 }
 #puppy-img {
-  visibility: hidden;
-  transition-duration: 15s;
+  max-width: 60%;
 }

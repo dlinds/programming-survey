@@ -15,6 +15,7 @@ function resetForm() {
   $("#language-suggestion-name").val("");
   $("#language-suggestion-reason").val("");
   $("#language-more-info").val("");
+  $("#language-suggestion-img").css("display", "unset")
   $("#puppy-row").hide();
   $("#puppy-img").attr("src", "");
 }
@@ -72,29 +73,29 @@ $(document).ready(function () {
       if (userIndustry === "Finance") {
         if (leisureActivity === "Work") {
           languageResult = "Fortran";
-          languageReasoning = "We think you would get along famously with Fortran! You work in finance and selected \"work\" as a leisure activity?! Fortran is crazy old so it will be perfect for you since it will be a lot of work to understand it!";
+          languageReasoning = "we think you would get along famously with Fortran! You work in finance and selected \"work\" as a leisure activity?! Fortran is crazy old so it will be perfect for you since it will be a lot of work to understand it!";
         } else { //anything for leisure but work, when chicken and finance selected
             if (langAge === "Elderly" && languageFormatting === "Precise") {
               languageResult = "Fortran";
-              languageReasoning = "because you work in finance and like either old or precise languages!";
+              languageReasoning = "because you work in finance and like either old or precise languages, we think Fortran would be great for you!";
             } else if (langAge === "Brand New" && languageFormatting === "Precise") { //chicken, finance, != work, brand new, precise
                 languageResult = "PowerShell";
-                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new and precise languages!";
+                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new and precise languages! PowerShell is the language for you";
               } else if (langAge === "Brand New" && languageFormatting === "Wild West") { //chicken, finance, != work, brand new, precise
                 languageResult = "Python";
-                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new languages, but you also don't care about preciseness!";
+                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new languages, but you also don't care about preciseness! We think Python is a great fit!";
                 } else if (langAge === "Middle Aged" && languageFormatting === "Precise") {
                   languageResult = "C#";
-                  languageReasoning = "because you work in finance and like middle aged languages, but still want a precise language!";
+                  languageReasoning = "we recommend C#! This is because you work in Finance, you like semi-old languages, and want precise formatting in your code.";
                 } else if (langAge === "Middle Aged" && languageFormatting === "Wild West") {
                     languageResult = "C++";
-                    languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting!";
+                    languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
                   } else if (languageFormatting === "Wild West") {
                       languageResult = "Javascript!";
-                      languageReasoning = "We think you'd be a great fit for Javascript as you don't care about age and prefer a little loosey goosey in your formatting.";
+                      languageReasoning = "We think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
                     } else {
                       languageResult = "Darn! No matches";
-                      languageReasoning = "We couldn't seem to find a great match for you. Can you give us a little more information about yourself and re-spin?";
+                      languageReasoning = "We couldn't seem to find a great match for you off just Finance and " + leisureActivity + ". Can you give us a little more information about yourself and re-spin?";
                     }
         } //end finance industry branch
       } else if (userIndustry === "Tech") {
@@ -132,44 +133,44 @@ $(document).ready(function () {
         } //end switch        
       } else if (userIndustry === "Science") {
         languageResult = "Fortran";
-        languageReasoning = "Fortran is perfect for anyone in science as it's a general-purpose, compiled imperative programming language that is especially suited to numeric computation and scientific computing. We don't even care about your other answers!";                  
+        languageReasoning = "we think Fortran is perfect for you as and your background in science as it's a general-purpose, compiled imperative programming language that is especially suited to numeric computation and scientific computing. We don't even care about your other answers!";                  
       } else if (userIndustry === "Media") {
           switch (leisureActivity) {
             case "Make Music": 
                   languageResult = "C++";
-                  languageReasoning = "Because you work in media and you like making music. Did you know that most audio plugins are made utilizing C++? There is even a library called Juce that can help jumpstart your journey!";
+                  languageReasoning = "because you work in media and you like making music, we think C++ is the perfect fit for you. Did you know that most audio VST plugins are made utilizing C++? There is even a library called Juce that can help jump start your journey!";
                   break; 
             case "Video Games" :
                   languageResult = "C++";
-                  languageReasoning = "You work in media and enjoy gaming! Unreal Engine is one of the standards for making video games. Unreal Engine happens to be build on top of C++!";
+                  languageReasoning = "because you work in media and enjoy gaming, we think C++ is the right fit! Unreal Engine is one of the standards for making video games, and it happens to be built on top of C++!";
                   break; 
             case "Exercise" :
                   languageResult = "PowerShell";
-                  languageReasoning = "You work in media and enjoy a bit of exercise, so PowerShell will be great for you as the method names are quite long - similar to the runs you are probably taking.";
+                  languageReasoning = "as you work in media and enjoy a bit of exercise, we think PowerShell will be great for you as the method names are quite long - similar to the runs you are probably taking.";
                   break;  
             default:
                   if (languageFormatting === "Precise") {
                     languageResult = "C++";
-                    languageReasoning = "A lot of applications in media are written with C++! It's also a very precise language, so you should love it!";
+                    languageReasoning = "because you work in media and want something precise, we think C++ is the route you should go. A lot of applications in media are written with C++! You should love it!";
                   } else if (languageFormatting === "Wild West") {
                     languageResult = "Javascript";
-                    languageReasoning = "If you work in media, and formatting consistency doesn't bother you, you will love Javascript! Never worry about missing a semi-colon or declaring a global variable again!";
+                    languageReasoning = "because work in media, and formatting consistency doesn't bother you, you will love Javascript! Never worry about missing a semi-colon or declaring a global variable again!";
                   } else {
                     languageResult = "C++";
-                    languageReasoning = "You work in media but don't seem to have a preference in language formatting. Even if you don't make music, play video games, or exercise, C++ will still be a great option for you as it's one of the most versatile languages out there. Did you know that even Microsoft Windows utilizes C++ for some of its source code?";
+                    languageReasoning = "because you work in media but don't seem to have a preference in language formatting, we highly recommend C++. Even if you don't make music, play video games, or exercise, C++ will still be a great option for you as it's one of the most versatile languages out there. Did you know that Microsoft Windows even utilizes C++ for some of its source code?";
                   }
                   break;  
           }
         } else { // if chicken is selected, but no industry is selected
             languageResult = "No language for you!";
-            languageReasoning = "C'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
+            languageReasoning = "c'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
       }
     } else if (chickenOrEgg === "Egg") {
       languageResult = "All six languages!";
-      languageReasoning = "By selecting egg, you have shown a higher level of intelligence than most, so all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). The egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
+      languageReasoning = "by selecting egg, you have shown a higher level of intelligence than most. As such, all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). In case you are curious why: the egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
       } else { //if chicken or egg isn't answered, then no results
         languageResult = "No recommendation.";
-        languageReasoning = "The most important question of all - chicken or egg - was not answered. Try again";
+        languageReasoning = "you forgot to answer the most important question of all - chicken or egg. You will need to try again.";
       }
     
     $("#language-suggestion-name").text(languageResult);
@@ -192,13 +193,14 @@ $(document).ready(function () {
               } 
                 else {
                   $("#language-suggestion-img").attr("src", ""); //set to no photo if no match is found
+                  $("#language-suggestion-img").css("display", "none"); //set to no photo if no match is found
                 }
-    $("#language-suggestion-reason").text(languageReasoning);
+    $("#language-suggestion-reason").text(userName + ", " + languageReasoning);
     $("#language-more-info").text(getInfoOnLanguage(languageResult));
 
     if (cutestPuppyName) {
       $("#puppy-img").attr("src", returnPuppy(cutestPuppyName));
-      console.log(returnPuppy(cutestPuppyName));
+      $(".puppy-name-result").text(cutestPuppyName);
       $("#puppy-row").show();
     } else {
       $("#puppy-row").hide();
@@ -208,6 +210,7 @@ $(document).ready(function () {
 
   // when show me languages button is pressed, show languages div
   $("#show-lang-button").click(function () {
+    $("#rules-language-options").css("display", "flex")
     $("#rules-language-options").show();
     $("#show-lang-button").prop("disabled",true);
     $("#hide-lang-button").text("Hide these!");
