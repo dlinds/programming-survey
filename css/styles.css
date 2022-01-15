@@ -7,10 +7,13 @@ body {
   box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
   border: 1px solid #dcdcdc;
 }
+.container:hover {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+}
 #welcome-jumbotron {
+  margin-top: 30px;
   box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
   border: 1px solid #dcdcdc;
-  margin-top: 30px;
 }
 #welcome-message {
   text-align: center;
@@ -61,16 +64,35 @@ ol {
   text-align: center;
 }
 
-#spin-button, #spin-again-button {
+.form-buttons {
   width: 30%;
   border: 1px solid #dcdcdc;
 }
 
 #form-results {
   display: none;
+  padding-top: 2%;
+}
+#results-name-img {
+  text-align: center;
+}
+#language-suggestion-img {
+  max-width: 200px;
+  display: none;
+}
+#language-suggestion-reason {
+  text-align: left;
+  padding-right: 5%;
 }
 
 #spin-again-row {
   margin-top: 25px;
   margin-bottom: 20px;
+}
+#puppy-row {
+  visibility: hidden;
+}
+#puppy-img {
+  visibility: hidden;
+  transition-duration: 15s;
 }

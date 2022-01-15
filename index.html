@@ -38,10 +38,10 @@
         </div>
         <div class="row">
           <div class="col-6" id="show-language">
-            <button class="btn btn-light" id="show-lang-button">Show me!</button>
+            <button class="btn btn-light form-buttons" id="show-lang-button">Show me!</button>
           </div>
           <div class="col-6" id="hide-language">
-            <button class="btn btn-light" id="hide-lang-button">No thanks!</button>
+            <button class="btn btn-light form-buttons" id="hide-lang-button">No thanks!</button>
           </div>
         </div>
         <div class="row" id="rules-language-options">
@@ -92,14 +92,11 @@
         <div class="row row-sections">
           <div class="col-4">
             <div class="form-group">
-              <label for="leisure-activity">Which is your favorite leisure activity?</label>
-              <select class="form-control" id="leisure-activity">
-                <option disabled selected value> -- Select an Activity -- </option>
-                <option>Video Games</option>
-                <option>Netflix</option>
-                <option>Exercise</option>
-                <option>Make Music</option>
-                <option>Work</option>
+              <label for="chicken-or-egg">Which do you think came first?</label>
+              <select class="form-control" id="chicken-or-egg">
+                <option disabled selected value> -- Select an Answer -- </option>
+                <option>Chicken</option>
+                <option>Egg</option>
               </select>
             </div>
           </div>
@@ -117,11 +114,14 @@
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="chicken-or-egg">Which do you think came first?</label>
-              <select class="form-control" id="chicken-or-egg">
-                <option disabled selected value> -- Select an Answer -- </option>
-                <option>Chicken</option>
-                <option>Egg</option>
+              <label for="leisure-activity">Which is your favorite leisure activity?</label>
+              <select class="form-control" id="leisure-activity">
+                <option disabled selected value> -- Select an Activity -- </option>
+                <option>Video Games</option>
+                <option>Netflix</option>
+                <option>Exercise</option>
+                <option>Make Music</option>
+                <option>Work</option>
               </select>
             </div>
           </div>
@@ -164,24 +164,32 @@
         </div>
         <div class="row">
           <div class="col-12" id="spin-column">
-            <button class="btn btn-light" id="spin-button"><h3>SPIN!</h3></button>
+            <button class="btn btn-light form-buttons" id="spin-button"><h3>SPIN!</h3></button>
           </div>
         </div>
       </form>
     </div> <!-- end form div -->
     <div class="card card-sections" id="form-results">
-      <div class="card-title"><h3>Test</h3></div>
+      
       <div class="row" >
-        <div class="col-4">
-          <p id="language-suggestion-name">Language placeholder</p>
+        <div class="col-4" id="results-name-img">
+          <h3 id="language-suggestion-name">Language placeholder</h3>
+          <img id="language-suggestion-img" src="" alt="suggested language icon">
         </div>
         <div class="col-8">
-          <p id="language-suggestion-reason">You would be a great match for language because of these reasons</p>
+          <div class="card-title"><h3>Your Results</h3></div>
+          <p id="language-suggestion-reason"></p>
+          <p id="language-more-info"></p>
         </div>
       </div>
       <div class="row" id="spin-again-row">
         <div class="col-12" id="spin-column">
-          <button class="btn btn-light" id="spin-again-button"><h3>SPIN AGAIN!</h3></button>
+          <button class="btn btn-light form-buttons" id="spin-again-button"><h3>SPIN AGAIN!</h3></button>
+        </div>
+      </div>
+      <div class="row" id="puppy-row">
+        <div class="col-12">
+          <img id="puppy-img" src="" alt="picture of puppy">
         </div>
       </div>
     </div>

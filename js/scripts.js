@@ -12,14 +12,41 @@ function resetForm() {
   $("select#language-formatting").val("");
   $("select#language-age").val("");
   $("select#cutest-puppy-name").val("");
-  
+  $("#language-suggestion-name").val("");
+  $("#language-suggestion-reason").val("");
+  $("#language-more-info").val("");
+  $("#puppy-row").hide();
+  $("#puppy-img").attr("src", "");
 }
 
-function processAboutYou () {
-  //
-  // this function will determine a 
-  // all inputs and selects are set to blank
-  //
+function getInfoOnLanguage (languageName) {
+  switch (languageName) {
+    case "Fortran": 
+        return "Fortran was originally developed by IBM in the 1950s for scientific and engineering applications, and subsequently came to dominate scientific computing. It has been in use for over six decades in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, geophysics, computational physics, crystallography and computational chemistry. It is a popular language for high-performance computing and is used for programs that benchmark and rank the world's fastest supercomputers.";
+    case "C++": 
+        return "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or \"C with Classes\". The language has expanded significantly over time, and modern C++ now has object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation. It is almost always implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.";
+    case "C#":
+        return "C# is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.\n\nC# was designed by Anders Hejlsberg from Microsoft in 2000 and was later approved as an international standard by Ecma (ECMA-334) in 2002 and ISO (ISO/IEC 23270) in 2003. Microsoft introduced C# along with .NET Framework and Visual Studio, both of which were closed-source. At the time, Microsoft had no open-source products. Four years later, in 2004, a free and open-source project called Mono began, providing a cross-platform compiler and runtime environment for the C# programming language. A decade later, Microsoft released Visual Studio Code (code editor), Roslyn (compiler), and the unified .NET platform (software framework), all of which support C# and are free, open-source, and cross-platform. Mono also joined Microsoft but was not merged into .NET.";
+    case "PowerShell":
+      return "PowerShell or Microsoft PowerShell (formerly Windows PowerShell) is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language. Initially a Windows component only, known as Windows PowerShell, it was made open-source and cross-platform on 18 August 2016 with the introduction of PowerShell Core. The former is built on the .NET Framework, the latter on .NET Core. The name Windows PowerShell is still present on the latest versions of Windows 11 and 10, but the latest versions of PowerShell is called PowerShell or Microsoft PowerShell.";
+    case "Python":
+      return "Python is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects. Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly, procedural), object-oriented and functional programming. It is often described as a \"batteries included\" language due to its comprehensive standard library.";
+    case "Javascript":
+      return "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices. JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).";
+    default:
+      return '';
+  }
+}
+
+function returnPuppy (puppyName) {
+  if (puppyName === "Spot") {
+    return "https://dogfoodsmart.com/wp-content/uploads/2020/12/How_Much_To_Feed_A_Beagle-810x442.jpg";
+  } else if (puppyName === "Doggy Dogerton") {
+    return "https://www.akc.org/wp-content/uploads/2017/01/australian-shepherd-puppy.jpeg";
+  } else {
+    return "";
+  }
+
 }
 
 $(document).ready(function () {
@@ -41,13 +68,11 @@ $(document).ready(function () {
     $("#form-questions").hide(); // when [spin] is pushed, hide form
     $("#form-results").toggle(); // and then show results div
 
-    //console.log(userName + " " + emailAddress + " " + leisureActivity + " " + userIndustry);
-
     if (chickenOrEgg === "Chicken") {
       if (userIndustry === "Finance") {
         if (leisureActivity === "Work") {
           languageResult = "Fortran";
-          languageReasoning = "because you couldn't be more boring! Really, \"work\" as your leisure activity?!";
+          languageReasoning = "We think you would get along famously with Fortran! You work in finance and selected \"work\" as a leisure activity?! Fortran is crazy old so it will be perfect for you since it will be a lot of work to understand it!";
         } else { //anything for leisure but work, when chicken and finance selected
             if (langAge === "Elderly" && languageFormatting === "Precise") {
               languageResult = "Fortran";
@@ -136,12 +161,12 @@ $(document).ready(function () {
                   break;  
           }
         } else { // if chicken is selected, but no industry is selected
-            languageResult = "";
-            languageReasoning = "";
+            languageResult = "No language for you!";
+            languageReasoning = "C'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
       }
     } else if (chickenOrEgg === "Egg") {
       languageResult = "All six languages!";
-      languageReasoning = "By selecting egg, you have shown a higher level of intelligence than most, so all languages will come naturally and easily to you (we even discarded all your other answers, as we were so sure on this one!). The egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
+      languageReasoning = "By selecting egg, you have shown a higher level of intelligence than most, so all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). The egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
       } else { //if chicken or egg isn't answered, then no results
         languageResult = "No recommendation.";
         languageReasoning = "The most important question of all - chicken or egg - was not answered. Try again";
@@ -168,24 +193,29 @@ $(document).ready(function () {
                 else {
                   $("#language-suggestion-img").attr("src", ""); //set to no photo if no match is found
                 }
-
-
     $("#language-suggestion-reason").text(languageReasoning);
+    $("#language-more-info").text(getInfoOnLanguage(languageResult));
 
-
-
+    if (cutestPuppyName) {
+      $("#puppy-img").attr("src", returnPuppy(cutestPuppyName));
+      console.log(returnPuppy(cutestPuppyName));
+      $("#puppy-row").show();
+    } else {
+      $("#puppy-row").hide();
+      $("#puppy-img").attr("src", "");
+    }
   });
 
   // when show me languages button is pressed, show languages div
   $("#show-lang-button").click(function () {
     $("#rules-language-options").show();
-    $("#show-lang-button").hide();
+    $("#show-lang-button").prop("disabled",true);
     $("#hide-lang-button").text("Hide these!");
   });
 
   // when hide these button is pressed, hide languages and re-show Show Me button
   $("#hide-lang-button").click(function () {
-    $("#show-lang-button").show();
+    $("#show-lang-button").prop("disabled",false);
     $("#rules-language-options").hide();
     $("#hide-lang-button").text("No thanks!");
   });
