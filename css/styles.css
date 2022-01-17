@@ -1,20 +1,24 @@
 body {
   background-color: #0b00ff03;
 }
+
 .container {
   padding: 2%;
   margin-top: 2%;
   box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
   border: 1px solid #dcdcdc;
 }
+
 .container:hover {
   box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
 }
+
 #welcome-jumbotron {
   margin-top: 30px;
   box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
   border: 1px solid #dcdcdc;
 }
+
 #welcome-message {
   text-align: center;
 }
@@ -31,16 +35,18 @@ body {
 #language-preview-header {
   text-align: center;
 }
+
 #rules-language-options {
   margin-top: 20px;
   margin-left: 5px;
   margin-right: 5px;
   display: none;
 }
+
 .language-name-previews {
   padding: 5px;
   background-color: #f8f9fa;
-  border:1px solid #dcdcdc;
+  border: 1px solid #dcdcdc;
   text-align: center;
 }
 
@@ -80,12 +86,15 @@ ol {
   display: none;
   padding-top: 2%;
 }
+
 #results-name-img {
   text-align: center;
 }
+
 #language-suggestion-img {
   max-width: 200px;
 }
+
 #language-suggestion-reason, #language-more-info {
   text-align: left;
   padding-right: 5%;
@@ -95,10 +104,12 @@ ol {
   margin-top: 25px;
   margin-bottom: 20px;
 }
+
 #puppy-col {
   text-align: center;
   padding: 30px;
 }
+
 #puppy-img {
   max-width: 60%;
 }

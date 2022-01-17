@@ -21,6 +21,11 @@ function resetForm() {
 }
 
 function getInfoOnLanguage (languageName) {
+  //
+  // returns the string for info about any particular language
+  // If no language, then return ""
+  //
+
   switch (languageName) {
     case "Fortran": 
         return "Fortran was originally developed by IBM in the 1950s for scientific and engineering applications, and subsequently came to dominate scientific computing. It has been in use for over six decades in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, geophysics, computational physics, crystallography and computational chemistry. It is a popular language for high-performance computing and is used for programs that benchmark and rank the world's fastest supercomputers.";
@@ -40,6 +45,11 @@ function getInfoOnLanguage (languageName) {
 }
 
 function returnPuppy (puppyName) {
+  //
+  // returns the URL for the dog
+  // returns empty string if no dog name provided
+  //
+  
   if (puppyName === "Spot") {
     return "https://dogfoodsmart.com/wp-content/uploads/2020/12/How_Much_To_Feed_A_Beagle-810x442.jpg";
   } else if (puppyName === "Doggy Dogerton") {
@@ -47,14 +57,13 @@ function returnPuppy (puppyName) {
   } else {
     return "";
   }
-
 }
 
 $(document).ready(function () {
   $("form#answers").submit(function (event) {
     event.preventDefault();
 
-    let userName = $("input#user-name").val();
+    let userName = $("input#user-name").val(); //not a const - if no name provided, ends up being set to Hey There
     const emailAddress = $("input#email").val();
     const chickenOrEgg = $("select#chicken-or-egg").val();
     const leisureActivity = $("select#leisure-activity").val();
@@ -66,12 +75,12 @@ $(document).ready(function () {
     let languageResult = '';
     let languageReasoning = '';
 
-    $("#form-questions").hide(); // when [spin] is pushed, hide form
+    $("#form-questions").hide(); // when [Find Out] is pushed, hide form
     $("#form-results").toggle(); // and then show results div
 
     if (chickenOrEgg === "Chicken") {
       if (userIndustry === "Finance") {
-        if (leisureActivity === "Work") {
+        if (leisureActivity === "Work") { //if finance and work for leisure, then set to Fortran
           languageResult = "Fortran";
           languageReasoning = "we think you would get along famously with Fortran! You work in finance and selected \"work\" as a leisure activity?! Fortran is crazy old so it will be perfect for you since it will be a lot of work to understand it!";
         } else { //anything for leisure but work, when chicken and finance selected
@@ -81,27 +90,26 @@ $(document).ready(function () {
             } else if (langAge === "Brand New" && languageFormatting === "Precise") { //chicken, finance, != work, brand new, precise
                 languageResult = "PowerShell";
                 languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new and precise languages! PowerShell is the language for you";
-              } else if (langAge === "Brand New" && languageFormatting === "Wild West") { //chicken, finance, != work, brand new, precise
-                languageResult = "Python";
-                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new languages, but you also don't care about preciseness! We think Python is a great fit!";
-                } else if (langAge === "Middle Aged" && languageFormatting === "Precise") {
-                  languageResult = "C#";
-                  languageReasoning = "we recommend C#! This is because you work in Finance, you like semi-old languages, and want precise formatting in your code.";
-                } else if (langAge === "Middle Aged" && languageFormatting === "Wild West") {
-                    languageResult = "C++";
-                    languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
-                  } else if (languageFormatting === "Wild West") {
-                      languageResult = "Javascript!";
-                      languageReasoning = "we think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
-                  }
-                    else if (languageFormatting === "Precise") {
-                      languageResult = "C++!";
-                      languageReasoning = "we think you'd be a great fit for C++ as you didn't select an age, but you do like your languages to be precise."; 
-                    } else {
-                      languageResult = "Darn! No matches";
-                      languageReasoning = "we couldn't seem to find a great match for you off just Finance and " + leisureActivity + ". Can you give us a little more information about yourself and re-spin?";
-                    }
-        } //end finance industry branch
+            } else if (langAge === "Brand New" && languageFormatting === "Wild West") { //chicken, finance, != work, brand new, precise
+              languageResult = "Python";
+              languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new languages, but you also don't care about preciseness! We think Python is a great fit!";
+            } else if (langAge === "Middle Aged" && languageFormatting === "Precise") {
+              languageResult = "C#";
+              languageReasoning = "we recommend C#! This is because you work in Finance, you like semi-old languages, and want precise formatting in your code.";
+            } else if (langAge === "Middle Aged" && languageFormatting === "Wild West") {
+                languageResult = "C++";
+                languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
+            } else if (languageFormatting === "Wild West") {
+                languageResult = "Javascript!";
+                languageReasoning = "we think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
+            } else if (languageFormatting === "Precise") {
+              languageResult = "C++!";
+              languageReasoning = "we think you'd be a great fit for C++ as you didn't select an age, but you do like your languages to be precise."; 
+            } else {
+              languageResult = "Darn! No matches";
+              languageReasoning = "we couldn't seem to find a great match for you off just Finance and " + leisureActivity + ". Can you give us a little more information about yourself and re-spin?";
+            }
+        } //end user industry finance branch
       } else if (userIndustry === "Tech") {
         switch (langAge) {
           case "Elderly": 
@@ -122,18 +130,18 @@ $(document).ready(function () {
                       languageReasoning = "because you work in tech and don't have an age preference. You also don't seem to even have a leisure activity or a formatting preference.";
                       break; 
                     } else if (!languageFormatting) {
-                        languageResult = "Javascript";
-                        languageReasoning = "because you work in tech, enjoy a leisure, but don't care about formatting.";
-                        break; 
-                    }   else if (!leisureActivity) {
-                          languageResult = "Javascript";
-                          languageReasoning = "because you work in tech, have a preference on formatting, but don't care about leisure.";
-                          break; 
-                     } else {
-                          languageResult = "C#";
-                          languageReasoning = "because you work in tech and don't care about age, but have a leisure and a formatting preference! C# will allow you to create applications for MS Windows!";
-                          break; 
-                      }
+                      languageResult = "Javascript";
+                      languageReasoning = "because you work in tech, enjoy a leisure, but don't care about formatting.";
+                      break; 
+                    } else if (!leisureActivity) {
+                      languageResult = "Javascript";
+                      languageReasoning = "because you work in tech, have a preference on formatting, but don't care about leisure.";
+                      break; 
+                    } else {
+                      languageResult = "C#";
+                      languageReasoning = "because you work in tech and don't care about age, but have a leisure and a formatting preference! C# will allow you to create applications for MS Windows!";
+                      break; 
+                    }
         } //end switch        
       } else if (userIndustry === "Science") {
         languageResult = "Fortran";
@@ -168,10 +176,10 @@ $(document).ready(function () {
         } else { // if chicken is selected, but no industry is selected
             languageResult = "No language for you!";
             languageReasoning = "c'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
-      }
-    } else if (chickenOrEgg === "Egg") {
-      languageResult = "All six languages!";
-      languageReasoning = "by selecting egg, you have shown a higher level of intelligence than most. As such, all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). In case you are curious why: the egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
+        }
+      } else if (chickenOrEgg === "Egg") {
+        languageResult = "All six languages!";
+        languageReasoning = "by selecting egg, you have shown a higher level of intelligence than most. As such, all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). In case you are curious why: the egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
       } else { //if chicken or egg isn't answered, then no results
         languageResult = "No recommendation.";
         languageReasoning = "you forgot to answer the most important question of all - chicken or egg. You will need to try again.";
@@ -181,27 +189,22 @@ $(document).ready(function () {
     if (languageResult === "C++") {
       $("#language-suggestion-img").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png");
     } else if (languageResult === "Fortran") {
-        $("#language-suggestion-img").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fortran_logo.svg/1200px-Fortran_logo.svg.png");
-      }
-        else if (languageResult === "C#") {
-          $("#language-suggestion-img").attr("src", "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png");
-        }
-          else if (languageResult === "Python") {
-            $("#language-suggestion-img").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png");
-          }
-            else if (languageResult === "PowerShell") {
-              $("#language-suggestion-img").attr("src", "https://www.saotn.org/wp-content/uploads/2016/08/PowerShell_5.0_logo.png");
-            }
-              else if (languageResult === "Javascript") {
-                $("#language-suggestion-img").attr("src", "https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png");
-              } 
-                else {
-                  $("#language-suggestion-img").attr("src", ""); //set to no photo if no match is found
-                  $("#language-suggestion-img").css("display", "none"); //set to no photo if no match is found
-                }
+      $("#language-suggestion-img").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fortran_logo.svg/1200px-Fortran_logo.svg.png");
+    } else if (languageResult === "C#") {
+      $("#language-suggestion-img").attr("src", "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png");
+    } else if (languageResult === "Python") {
+      $("#language-suggestion-img").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png");
+    } else if (languageResult === "PowerShell") {
+      $("#language-suggestion-img").attr("src", "https://www.saotn.org/wp-content/uploads/2016/08/PowerShell_5.0_logo.png");
+    } else if (languageResult === "Javascript") {
+      $("#language-suggestion-img").attr("src", "https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png");
+    } else {
+      $("#language-suggestion-img").attr("src", ""); //set to no photo if no match is found
+      $("#language-suggestion-img").css("display", "none"); //set to no photo if no match is found
+    }
 
     if (!userName) {
-      userName = "Hey there";
+      userName = "Hey there"; // set to Hey There, as message appends the name provided to the language reasoning. If no name is provided, it starts with Hey there 
     }
 
     $("#language-suggestion-reason").text(userName + ", " + languageReasoning);
@@ -219,7 +222,7 @@ $(document).ready(function () {
 
   // when show me languages button is pressed, show languages div
   $("#show-lang-button").click(function () {
-    $("#rules-language-options").css("display", "flex")
+    $("#rules-language-options").css("display", "flex");
     $("#rules-language-options").show();
     $("#show-lang-button").prop("disabled",true);
     $("#hide-lang-button").text("Hide these!");
