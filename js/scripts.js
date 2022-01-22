@@ -28,11 +28,11 @@ function getInfoOnLanguage (languageName) {
 
   switch (languageName) {
     case "Fortran": 
-        return "Fortran was originally developed by IBM in the 1950s for scientific and engineering applications, and subsequently came to dominate scientific computing. It has been in use for over six decades in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, geophysics, computational physics, crystallography and computational chemistry. It is a popular language for high-performance computing and is used for programs that benchmark and rank the world's fastest supercomputers.";
+      return "Fortran was originally developed by IBM in the 1950s for scientific and engineering applications, and subsequently came to dominate scientific computing. It has been in use for over six decades in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, geophysics, computational physics, crystallography and computational chemistry. It is a popular language for high-performance computing and is used for programs that benchmark and rank the world's fastest supercomputers.";
     case "C++": 
-        return "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or \"C with Classes\". The language has expanded significantly over time, and modern C++ now has object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation. It is almost always implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.";
+      return "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or \"C with Classes\". The language has expanded significantly over time, and modern C++ now has object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation. It is almost always implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.";
     case "C#":
-        return "C# is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.\n\nC# was designed by Anders Hejlsberg from Microsoft in 2000 and was later approved as an international standard by Ecma (ECMA-334) in 2002 and ISO (ISO/IEC 23270) in 2003. Microsoft introduced C# along with .NET Framework and Visual Studio, both of which were closed-source. At the time, Microsoft had no open-source products. Four years later, in 2004, a free and open-source project called Mono began, providing a cross-platform compiler and runtime environment for the C# programming language. A decade later, Microsoft released Visual Studio Code (code editor), Roslyn (compiler), and the unified .NET platform (software framework), all of which support C# and are free, open-source, and cross-platform. Mono also joined Microsoft but was not merged into .NET.";
+      return "C# is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.\n\nC# was designed by Anders Hejlsberg from Microsoft in 2000 and was later approved as an international standard by Ecma (ECMA-334) in 2002 and ISO (ISO/IEC 23270) in 2003. Microsoft introduced C# along with .NET Framework and Visual Studio, both of which were closed-source. At the time, Microsoft had no open-source products. Four years later, in 2004, a free and open-source project called Mono began, providing a cross-platform compiler and runtime environment for the C# programming language. A decade later, Microsoft released Visual Studio Code (code editor), Roslyn (compiler), and the unified .NET platform (software framework), all of which support C# and are free, open-source, and cross-platform. Mono also joined Microsoft but was not merged into .NET.";
     case "PowerShell":
       return "PowerShell or Microsoft PowerShell (formerly Windows PowerShell) is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language. Initially a Windows component only, known as Windows PowerShell, it was made open-source and cross-platform on 18 August 2016 with the introduction of PowerShell Core. The former is built on the .NET Framework, the latter on .NET Core. The name Windows PowerShell is still present on the latest versions of Windows 11 and 10, but the latest versions of PowerShell is called PowerShell or Microsoft PowerShell.";
     case "Python":
@@ -88,8 +88,8 @@ $(document).ready(function () {
               languageResult = "Fortran";
               languageReasoning = "because you work in finance and like either old or precise languages, we think Fortran would be great for you!";
             } else if (langAge === "Brand New" && languageFormatting === "Precise") { //chicken, finance, != work, brand new, precise
-                languageResult = "PowerShell";
-                languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new and precise languages! PowerShell is the language for you";
+              languageResult = "PowerShell";
+              languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new and precise languages! PowerShell is the language for you";
             } else if (langAge === "Brand New" && languageFormatting === "Wild West") { //chicken, finance, != work, brand new, precise
               languageResult = "Python";
               languageReasoning = "because you work in finance, work isn't leisure (so you automate to work less), and you like new languages, but you also don't care about preciseness! We think Python is a great fit!";
@@ -97,11 +97,11 @@ $(document).ready(function () {
               languageResult = "C#";
               languageReasoning = "we recommend C#! This is because you work in Finance, you like semi-old languages, and want precise formatting in your code.";
             } else if (langAge === "Middle Aged" && languageFormatting === "Wild West") {
-                languageResult = "C++";
-                languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
+              languageResult = "C++";
+              languageReasoning = "because you work in finance, want something a little older, but like some loosey goosey formatting, we'd recommend checking out JavaScript!";
             } else if (languageFormatting === "Wild West") {
-                languageResult = "Javascript!";
-                languageReasoning = "we think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
+              languageResult = "Javascript!";
+              languageReasoning = "we think you'd be a great fit for Javascript as you didn't select an age but you do prefer a little loosey goosey in your formatting.";
             } else if (languageFormatting === "Precise") {
               languageResult = "C++!";
               languageReasoning = "we think you'd be a great fit for C++ as you didn't select an age, but you do like your languages to be precise."; 
@@ -112,78 +112,78 @@ $(document).ready(function () {
         } //end user industry finance branch
       } else if (userIndustry === "Tech") {
         switch (langAge) {
-          case "Elderly": 
-                    languageResult = "Fortran";
-                    languageReasoning = "Because you work in tech, and want a language older than the personal computer";
-                    break;
+          case "Elderly":
+            languageResult = "Fortran";
+            languageReasoning = "Because you work in tech, and want a language older than the personal computer";
+            break;
           case "Middle Aged":
-                    languageResult = "C++";
-                    languageReasoning = "because you work in tech, but want something a bit more middle aged";
-                    break;
+            languageResult = "C++";
+            languageReasoning = "because you work in tech, but want something a bit more middle aged";
+            break;
           case "Brand New":
-                    languageResult = "PowerShell";
-                    languageReasoning = "because you work in tech, but want something from this century. PowerShell should allow you to automate many functions of your job!";
-                    break;         
+            languageResult = "PowerShell";
+            languageReasoning = "because you work in tech, but want something from this century. PowerShell should allow you to automate many functions of your job!";
+            break;         
           default:
-                    if (!leisureActivity && !languageFormatting) {
-                      languageResult = "Python";
-                      languageReasoning = "because you work in tech and don't have an age preference. You also don't seem to even have a leisure activity or a formatting preference.";
-                      break; 
-                    } else if (!languageFormatting) {
-                      languageResult = "Javascript";
-                      languageReasoning = "because you work in tech, enjoy a leisure, but don't care about formatting.";
-                      break; 
-                    } else if (!leisureActivity) {
-                      languageResult = "Javascript";
-                      languageReasoning = "because you work in tech, have a preference on formatting, but don't care about leisure.";
-                      break; 
-                    } else {
-                      languageResult = "C#";
-                      languageReasoning = "because you work in tech and don't care about age, but have a leisure and a formatting preference! C# will allow you to create applications for MS Windows!";
-                      break; 
-                    }
+            if (!leisureActivity && !languageFormatting) {
+              languageResult = "Python";
+              languageReasoning = "because you work in tech and don't have an age preference. You also don't seem to even have a leisure activity or a formatting preference.";
+              break; 
+            } else if (!languageFormatting) {
+              languageResult = "Javascript";
+              languageReasoning = "because you work in tech, enjoy a leisure, but don't care about formatting.";
+              break; 
+            } else if (!leisureActivity) {
+              languageResult = "Javascript";
+              languageReasoning = "because you work in tech, have a preference on formatting, but don't care about leisure.";
+              break; 
+            } else {
+              languageResult = "C#";
+              languageReasoning = "because you work in tech and don't care about age, but have a leisure and a formatting preference! C# will allow you to create applications for MS Windows!";
+              break; 
+            }
         } //end switch        
       } else if (userIndustry === "Science") {
         languageResult = "Fortran";
         languageReasoning = "we think Fortran is perfect for you as and your background in science as it's a general-purpose, compiled imperative programming language that is especially suited to numeric computation and scientific computing. We don't even care about your other answers!";                  
       } else if (userIndustry === "Media") {
-          switch (leisureActivity) {
-            case "Make Music": 
-                  languageResult = "C++";
-                  languageReasoning = "because you work in media and you like making music, we think C++ is the perfect fit for you. Did you know that most audio VST plugins are made utilizing C++? There is even a library called Juce that can help jump start your journey!";
-                  break; 
-            case "Video Games" :
-                  languageResult = "C++";
-                  languageReasoning = "because you work in media and enjoy gaming, we think C++ is the right fit! Unreal Engine is one of the standards for making video games, and it happens to be built on top of C++!";
-                  break; 
-            case "Exercise" :
-                  languageResult = "PowerShell";
-                  languageReasoning = "as you work in media and enjoy a bit of exercise, we think PowerShell will be great for you as the method names are quite long - similar to the runs you are probably taking.";
-                  break;  
-            default:
-                  if (languageFormatting === "Precise") {
-                    languageResult = "C++";
-                    languageReasoning = "because you work in media and want something precise, we think C++ is the route you should go. A lot of applications in media are written with C++! You should love it!";
-                  } else if (languageFormatting === "Wild West") {
-                    languageResult = "Javascript";
-                    languageReasoning = "because work in media, and formatting consistency doesn't bother you, you will love Javascript! Never worry about missing a semi-colon or declaring a global variable again!";
-                  } else {
-                    languageResult = "C++";
-                    languageReasoning = "because you work in media but don't seem to have a preference in language formatting, we highly recommend C++. Even if you don't make music, play video games, or exercise, C++ will still be a great option for you as it's one of the most versatile languages out there. Did you know that Microsoft Windows even utilizes C++ for some of its source code?";
-                  }
-                  break;  
-          }
-        } else { // if chicken is selected, but no industry is selected
-            languageResult = "No language for you!";
-            languageReasoning = "c'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
+        switch (leisureActivity) {
+          case "Make Music":
+            languageResult = "C++";
+            languageReasoning = "because you work in media and you like making music, we think C++ is the perfect fit for you. Did you know that most audio VST plugins are made utilizing C++? There is even a library called Juce that can help jump start your journey!";
+            break; 
+          case "Video Games" :
+            languageResult = "C++";
+            languageReasoning = "because you work in media and enjoy gaming, we think C++ is the right fit! Unreal Engine is one of the standards for making video games, and it happens to be built on top of C++!";
+            break; 
+          case "Exercise" :
+            languageResult = "PowerShell";
+            languageReasoning = "as you work in media and enjoy a bit of exercise, we think PowerShell will be great for you as the method names are quite long - similar to the runs you are probably taking.";
+            break;  
+          default:
+            if (languageFormatting === "Precise") {
+              languageResult = "C++";
+              languageReasoning = "because you work in media and want something precise, we think C++ is the route you should go. A lot of applications in media are written with C++! You should love it!";
+            } else if (languageFormatting === "Wild West") {
+              languageResult = "Javascript";
+              languageReasoning = "because work in media, and formatting consistency doesn't bother you, you will love Javascript! Never worry about missing a semi-colon or declaring a global variable again!";
+            } else {
+              languageResult = "C++";
+              languageReasoning = "because you work in media but don't seem to have a preference in language formatting, we highly recommend C++. Even if you don't make music, play video games, or exercise, C++ will still be a great option for you as it's one of the most versatile languages out there. Did you know that Microsoft Windows even utilizes C++ for some of its source code?";
+            }
+            break;  
         }
-      } else if (chickenOrEgg === "Egg") {
-        languageResult = "All six languages!";
-        languageReasoning = "by selecting egg, you have shown a higher level of intelligence than most. As such, all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). In case you are curious why: the egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
-      } else { //if chicken or egg isn't answered, then no results
-        languageResult = "No recommendation.";
-        languageReasoning = "you forgot to answer the most important question of all - chicken or egg. You will need to try again.";
-      }
+      } else { // if chicken is selected, but no industry is selected
+        languageResult = "No language for you!";
+        languageReasoning = "c'mon, you have to select more than just Chicken. Please hit SPIN AGAIN and try once more.";
+      } 
+    } else if (chickenOrEgg === "Egg") {
+      languageResult = "All six languages!";
+      languageReasoning = "by selecting egg, you have shown a higher level of intelligence than most. As such, all languages will come naturally and easily to you (we even discarded all your other answers, as we are so sure on this one!). In case you are curious why: the egg was first, as the predecessor to the chicken laid the egg that would become the first chicken once the egg hatched.";
+    } else { //if chicken or egg isn't answered, then no results
+      languageResult = "No recommendation.";
+      languageReasoning = "you forgot to answer the most important question of all - chicken or egg. You will need to try again.";
+    }
     
     $("#language-suggestion-name").text(languageResult);
     if (languageResult === "C++") {
